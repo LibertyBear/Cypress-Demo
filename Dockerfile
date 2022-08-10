@@ -10,6 +10,7 @@ COPY ./cypress.json .
 COPY ./cypress ./cypress
 #Install the cypress dependencies in the work directory
 RUN npm install
+RUN apt-get install xvfb
 #Executable commands the container will use[Exec Form]
 ENTRYPOINT ["npx","cypress","run"]
 #With CMD in this case, we can specify more parameters to the last entrypoint.
