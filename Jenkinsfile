@@ -40,9 +40,9 @@ pipeline {
         
         stage('Testing') {
             steps {
-                // bat for windows cmd
-                bat "npm i"
-                bat "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                // bat for windows cmd X sh 
+                sh "npm i"
+                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
             }
         }
         
