@@ -39,7 +39,7 @@ pipeline {
                 echo "Building the application"
                 sh "npm i"
                 sh 'npm config ls'
-                sh "npm i xvfb"
+                sh "npm i @cypress/xvfb"
             }
         }
         
