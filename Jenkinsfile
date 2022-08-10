@@ -17,7 +17,7 @@ pipeline {
         BUILD_USER = ''
     }
 
-    tools {nodejs "nodejs"}
+    tools {nodejs "node js"}
     
     //user-provided parameters
      parameters {
