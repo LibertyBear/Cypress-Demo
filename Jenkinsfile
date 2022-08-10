@@ -16,6 +16,8 @@ pipeline {
     environment {
         BUILD_USER = ''
     }
+
+    tools {nodejs "nodejs"}
     
     //user-provided parameters
      parameters {
@@ -35,6 +37,8 @@ pipeline {
             //Define steps
             steps {
                 echo "Building the application"
+                sh "npm i"
+                sh 'npm config ls'
             }
         }
         
