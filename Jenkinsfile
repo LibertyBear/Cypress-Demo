@@ -39,8 +39,7 @@ pipeline {
                 echo "Building the application"
                 sh "npm i"
                 sh 'npm config ls'
-                sh "npm i @cypress/xvfb" // apt-get
-                sh "which xvfb"
+               
             }
         }
         
@@ -48,7 +47,8 @@ pipeline {
             steps {
                 // bat for windows cmd X sh 
                 sh "npm i"
-                sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
+                sh "npx cypress run --spec ${SPEC} --headless"
             }
         }
         
