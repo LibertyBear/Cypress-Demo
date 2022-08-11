@@ -39,7 +39,8 @@ pipeline {
                 echo "Building the application"
                 sh "npm i"
                 sh 'npm config ls'
-                sh "npm i @cypress/xvfb"
+                sh "npm i @cypress/xvfb" // apt-get
+                sh "which xvfb"
             }
         }
         
