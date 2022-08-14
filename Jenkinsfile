@@ -41,7 +41,8 @@ pipeline {
                 //sh 'npm config ls'
                 sh "docker pull cypress/included:8.2.0"
                 sh "docker images"
-                sh "docker run -it --entrypoint=cypress cypress/included:8.2.0 info"
+                sh "docker ps"
+                
                
             }
         }
