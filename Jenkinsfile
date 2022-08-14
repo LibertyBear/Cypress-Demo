@@ -37,8 +37,10 @@ pipeline {
             //Define steps
             steps {
                 echo "Building the application"
-                sh "npm i"
-                sh 'npm config ls'
+                //sh "npm i"
+                //sh 'npm config ls'
+                sh "docker pull cypress/included:8.2.0"
+                sh "docker images"
                
             }
         }
@@ -48,7 +50,7 @@ pipeline {
                 // bat for windows cmd X sh 
                 sh "npm i"
                 //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
-                sh "npx cypress run --spec ${SPEC} --headless"
+                //sh "npx cypress run --spec ${SPEC} --headed"
             }
         }
         
