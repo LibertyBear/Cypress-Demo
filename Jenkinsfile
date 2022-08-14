@@ -41,6 +41,7 @@ pipeline {
                 //sh 'npm config ls'
                 sh "docker pull cypress/included:8.2.0"
                 sh "docker images"
+                sh "docker run -it --entrypoint=cypress cypress/included:8.2.0 info"
                
             }
         }
@@ -48,7 +49,7 @@ pipeline {
         stage('Testing') {
             steps {
                 // bat for windows cmd X sh 
-                sh "npm i"
+                //sh "npm i"
                 //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
                 //sh "npx cypress run --spec ${SPEC} --headed"
             }
