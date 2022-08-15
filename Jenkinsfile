@@ -46,7 +46,9 @@ pipeline {
                 sh "docker build cypress/included:8.2.0"
                 */
 
-                sh "docker build -t cypress ." 
+                sh "docker pull cypress/included:10.4.0"
+                sh "docker images"
+                sh "docker run --entrypoint=cypress cypress/included:10.4.0 info" 
                
             }
         }
