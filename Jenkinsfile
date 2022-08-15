@@ -56,7 +56,7 @@ pipeline {
         stage('Testing') {
             steps {
                 echo "Testing..."
-                sh "docker run -it -v $PWD:/e2e -w /e2e --entrypoint=cypress cypress/included:10.4.0 --spec cypress/integration/pom/homeSauce.spec.js --browser chrome"
+                sh "docker run -v $PWD:/e2e -w /e2e --entrypoint=cypress cypress/included:10.4.0 --spec cypress/integration/pom/homeSauce.spec.js --browser chrome"
 
                 //sh "docker run -t cypressTest:1.0.0 ."
                // sh "docker run -i -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/my-cypress-project -t cypress/included:8.2.0 --spec cypress/integration/pom/*.spec.js"
