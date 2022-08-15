@@ -6,7 +6,7 @@
 # Chrome 80 & Firefox 72
  
 # pull image
-FROM cypress/browsers:node13.6.0-chrome80-ff72
+FROM cypress/browsers:node16.16.0-chrome80-ff72
 # make directory inside container
 RUN mkdir /app
 WORKDIR /app
