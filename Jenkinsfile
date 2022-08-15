@@ -50,7 +50,7 @@ pipeline {
         stage('Testing') {
             steps {
                 echo "Testing..."
-                sh "docker run -it -v '%cd%':/e2e -w /e2e cypress/included:8.2.0 --spec ${SPEC} --browser ${BROWSER}"
+                sh "docker run -v '%cd%':/e2e -w /e2e cypress/included:8.2.0 --spec ${SPEC} --browser ${BROWSER}"
                 // bat for windows cmd X sh 
                 //sh "npm i"
                 //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
