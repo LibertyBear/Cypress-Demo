@@ -46,7 +46,7 @@ pipeline {
                 sh "docker build cypress/included:8.2.0"
                 */
 
-                sh "docker build -t cypressTest:1.0.0 ." 
+                sh "docker build -t cypress ." 
                
             }
         }
@@ -55,7 +55,7 @@ pipeline {
             steps {
                 echo "Testing..."
 
-                sh "docker run -t cypressTest:1.0.0 ."
+                //sh "docker run -t cypressTest:1.0.0 ."
                // sh "docker run -i -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/my-cypress-project -t cypress/included:8.2.0 --spec cypress/integration/pom/*.spec.js"
                 
                 //sh "docker run -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/e2e -w /e2e cypress/included:8.2.0 --spec '${SPEC}' --browser ${BROWSER}"
