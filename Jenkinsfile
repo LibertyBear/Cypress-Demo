@@ -21,7 +21,7 @@ pipeline {
     
     //user-provided parameters
      parameters {
-        string(name: 'SPEC', defaultValue: 'cypress/integration/**/**', description: 'Ej: cypress/integration/pom/*.spec.js')
+        string(name: 'SPEC', defaultValue: 'cypress/integration/**/**', description: 'Ex: cypress/integration/pom/*.spec.js')
         choice(name: 'BROWSER', choices: ['chrome', 'edge', 'firefox'], description: 'Pick the web browser you want to use to run your scripts')
     }
     
@@ -50,7 +50,8 @@ pipeline {
         stage('Testing') {
             steps {
                 echo "Testing..."
-                sh "docker run -v '$(pwd)':/e2e -w /e2e cypress/included:8.2.0 --spec ${SPEC} --browser ${BROWSER}"
+                sh "pwd"
+                //sh "docker run -v /:/e2e -w /e2e cypress/included:8.2.0 --spec ${SPEC} --browser ${BROWSER}"
                 // bat for windows cmd X sh 
                 //sh "npm i"
                 //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
