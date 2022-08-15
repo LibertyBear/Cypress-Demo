@@ -42,6 +42,8 @@ pipeline {
                 sh "docker pull cypress/included:8.2.0"
                 sh "docker images"
                 sh "docker ps"
+
+                sh "docker build -t cypress/included:8.2.0"
                 
                
             }
@@ -50,8 +52,9 @@ pipeline {
         stage('Testing') {
             steps {
                 echo "Testing..."
+                sh "docker run -i -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/my-cypress-project -t cypress/included:8.2.0 --spec cypress/integration/pom/*.spec.js"
                 
-                sh "docker run -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/e2e -w /e2e cypress/included:8.2.0 --spec '${SPEC}' --browser ${BROWSER}"
+                //sh "docker run -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/e2e -w /e2e cypress/included:8.2.0 --spec '${SPEC}' --browser ${BROWSER}"
                 // bat for windows cmd X sh 
                 //sh "npm i"
                 //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
