@@ -51,7 +51,7 @@ pipeline {
             steps {
                 echo "Testing..."
                 
-                sh "docker run -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/e2e -w /e2e cypress/included:8.2.0 --spec ${SPEC} --browser ${BROWSER}"
+                sh "docker run -v '/home/jenkins/workspace/VF_IOT_MANAGED_CONNECTIVITY/Testing_Automation/Training Chapter/cypress-example':/e2e -w /e2e cypress/included:8.2.0 --spec '${SPEC}' --browser ${BROWSER}"
                 // bat for windows cmd X sh 
                 //sh "npm i"
                 //sh "npx cypress run --browser ${BROWSER} --spec ${SPEC}"
